@@ -339,6 +339,7 @@
                     },
                     error: function (error) {
                         $("#img_producto").LoadingOverlay("hide");
+                        $("mensajeError").show();
                         $("mensajeError").text("Error al mostrar imagen");
                     },
                     beforeSend: function (error) {
