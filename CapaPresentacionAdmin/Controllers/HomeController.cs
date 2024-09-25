@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
 using CapaEntidad;
 using CapaNegocio;
+using ClosedXML.Excel;
 
 
 namespace CapaPresentacionAdmin.Controllers
@@ -28,7 +31,7 @@ namespace CapaPresentacionAdmin.Controllers
             List<Usuario> oLista = new List<Usuario>();
             oLista = new CN_Usuarios().Listar();
 
-            return Json(new { data= oLista }, JsonRequestBehavior.AllowGet);
+            return Json(new { data = oLista }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -39,11 +42,11 @@ namespace CapaPresentacionAdmin.Controllers
 
             if (objeto.IdUsuario == 0)
             {
-                resultado = new CN_Usuarios().Registrar(objeto,out mensaje);
+                resultado = new CN_Usuarios().Registrar(objeto, out mensaje);
 
             } else
             {
-                resultado = new CN_Usuarios().Editar(objeto,out mensaje);
+                resultado = new CN_Usuarios().Editar(objeto, out mensaje);
             }
 
             return Json(new { resultado = resultado, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
@@ -55,10 +58,24 @@ namespace CapaPresentacionAdmin.Controllers
             bool respuesta = false;
             string mensaje = string.Empty;
 
-            respuesta = new CN_Usuarios().Eliminar(id,out mensaje);
+            respuesta = new CN_Usuarios().Eliminar(id, out mensaje);
 
             return Json(new { resultado = respuesta, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
         }
+
+
+
+
+        [HttpGet]
+        public JsonResult ListaReporte(string fechainicio, string fechafin, string idtransaccion)
+        {
+            List<Reporte> oLista = new List<Reporte>();
+
+            oLista = new CN_Reporte().Ventas(fechainicio, fechafin, idtransaccion);
+
+            return Json(new { data = oLista }, JsonRequestBehavior.AllowGet);
+        }
+
 
 
         [HttpGet]
@@ -66,7 +83,52 @@ namespace CapaPresentacionAdmin.Controllers
         {
             DashBoard objeto = new CN_Reporte().VerDashboard();
 
-            return Json(new { resultado = objeto}, JsonRequestBehavior.AllowGet);
+            return Json(new { resultado = objeto }, JsonRequestBehavior.AllowGet);
         }
+
+
+        [HttpPost]
+        public FileResult ExportarVenta(string fechainicio, string fechafin, string idtransaccion)
+        {
+            List<Reporte> oLista = new List<Reporte>();
+            oLista = new CN_Reporte().Ventas(fechainicio, fechafin, idtransaccion);
+            DataTable dt = new DataTable();
+            //CULTURA Cambiar en el caso de ser de otro lugar la pagina
+            dt.Locale = new System.Globalization.CultureInfo("es-PE");
+            dt.Columns.Add("Fecha Venta", typeof(string));
+            dt.Columns.Add("Cliente", typeof(string));
+            dt.Columns.Add("Producto", typeof(string));
+            dt.Columns.Add("Precio", typeof(decimal));
+            dt.Columns.Add("Cantidad", typeof(int));
+            dt.Columns.Add("Total", typeof(decimal));
+            dt.Columns.Add("IdTransaccion", typeof(string));
+
+            foreach (Reporte rp in oLista)
+            {
+                dt.Rows.Add(new object[]
+                {
+                    rp.FechaVenta,
+                    rp.Cliente,
+                    rp.Producto,
+                    rp.Precio,
+                    rp.Cantidad,
+                    rp.Total,
+                    rp.IdTransaccion
+                });
+            }
+            dt.TableName = "Datos";
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt);
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+                    return File(stream.ToArray(),"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "ReporteVenta"+ DateTime.Now.ToString()+".xlsx");
+                }
+            }
+
+        }
+
     }
 }
