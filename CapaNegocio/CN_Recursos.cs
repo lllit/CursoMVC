@@ -44,8 +44,8 @@ namespace CapaNegocio
             //https://myaccount.google.com/apppasswords?pli=1&rapt=AEjHL4N2VEoeXoIgrWoF4CkN1U688XvyFkB1rG6wwxIcYylUZGUmQKAqwSGjL9j3XbOzxk0HdTv9952IRRWbk8EO5PmDgtoYnH2IJqM0QNDQpLdDW2Psbv0
 
 
-            string dir_correo = "email";
-            string pass_correo = "pass";
+            string dir_correo = "lit.io30303@gmail.com";
+            string pass_correo = "lxjx itbb fjga tphu";
             try
             {
                 MailMessage mail = new MailMessage();

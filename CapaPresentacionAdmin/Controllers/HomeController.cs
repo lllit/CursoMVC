@@ -14,6 +14,9 @@ using ClosedXML.Excel;
 
 namespace CapaPresentacionAdmin.Controllers
 {
+
+
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -62,8 +65,6 @@ namespace CapaPresentacionAdmin.Controllers
 
             return Json(new { resultado = respuesta, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
         }
-
-
 
 
         [HttpGet]
