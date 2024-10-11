@@ -1,0 +1,6 @@
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaEntidad\obj\Debug\CapaEntidad.pdb

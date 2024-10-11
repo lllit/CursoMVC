@@ -1,0 +1,11 @@
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\bin\Release\CapaNegocio.dll
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\bin\Release\CapaNegocio.pdb
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\bin\Release\CapaDatos.dll
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\bin\Release\CapaEntidad.dll
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\bin\Release\CapaDatos.pdb
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\bin\Release\CapaEntidad.pdb
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\obj\Release\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\obj\Release\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\obj\Release\CapaNego.81B9D119.Up2Date
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\obj\Release\CapaNegocio.dll
+C:\Users\litio\OneDrive\Escritorio\LLLIT\Code-W11\C#\SISCarrito-V2\CursoMVC\CapaNegocio\obj\Release\CapaNegocio.pdb
